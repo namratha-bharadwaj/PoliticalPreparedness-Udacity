@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="representativeItem"
+            type="com.example.android.politicalpreparedness.models.Representative" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_medium">
+
+        <ImageView
+            android:id="@+id/representative_photo_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:displayPic="@{representativeItem.official.photoUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:src="@drawable/ic_profile" />
+
+        <TextView
+            android:id="@+id/representative_role_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@{representativeItem.office.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/representative_photo_imageView"
+            app:layout_constraintTop_toTopOf="@id/representative_photo_imageView"
+            tools:text="President of the United States of America" />
+
+        <TextView
+            android:id="@+id/representative_name_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:gravity="left"
+            android:text="@{representativeItem.official.name}"
+            app:layout_constraintEnd_toEndOf="@id/representative_role_textView"
+            app:layout_constraintStart_toStartOf="@id/representative_role_textView"
+            app:layout_constraintTop_toBottomOf="@id/representative_role_textView"
+            tools:text="Joe Biden" />
+
+        <TextView
+            android:id="@+id/representative_party_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:text="@{representativeItem.official.party}"
+            app:layout_constraintBottom_toBottomOf="@id/representative_photo_imageView"
+            app:layout_constraintEnd_toEndOf="@id/representative_name_textView"
+            app:layout_constraintStart_toStartOf="@id/representative_name_textView"
+            app:layout_constraintTop_toBottomOf="@id/representative_name_textView"
+            tools:text="Republican party" />
+
+        <LinearLayout
+            android:id="@+id/social_media_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/representative_photo_imageView">
+
+            <ImageView
+                android:id="@+id/facebook_imageView"
+                style="@style/SocialMediaIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_facebook" />
+
+            <ImageView
+                android:id="@+id/www_imageView"
+                style="@style/SocialMediaIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:srcCompat="@drawable/ic_www" />
+
+            <ImageView
+                android:id="@+id/twitter_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:srcCompat="@drawable/ic_twitter" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
