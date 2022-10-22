@@ -1,6 +1,8 @@
 package com.example.android.politicalpreparedness.repository.PoliticalPreparednessRepository
 
+import android.app.Application
 import android.util.Log
+import com.example.android.politicalpreparedness.models.Election
 import com.example.android.politicalpreparedness.network.api.CivicsApiService
 import com.example.android.politicalpreparedness.models.Representative
 import java.lang.Exception

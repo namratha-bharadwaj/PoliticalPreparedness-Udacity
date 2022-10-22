@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="electionItem"
+            type="com.example.android.politicalpreparedness.models.Election" />
+
+        <variable
+            name="clickListener"
+            type="com.example.android.politicalpreparedness.election.adapter.IElectionItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:padding="@dimen/padding_small"
+        android:onClick="@{() -> clickListener.onClick(electionItem)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/election_name_textView"
+            style="@style/ElectionName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{electionItem.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/election_description_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:text="@{electionItem.electionDay.toString()}"
+            app:layout_constraintEnd_toEndOf="@+id/election_name_textView"
+            app:layout_constraintStart_toStartOf="@+id/election_name_textView"
+            app:layout_constraintTop_toBottomOf="@+id/election_name_textView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

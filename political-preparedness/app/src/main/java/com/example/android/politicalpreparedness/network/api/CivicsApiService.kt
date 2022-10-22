@@ -1,8 +1,10 @@
 package com.example.android.politicalpreparedness.network.api
 
+import com.example.android.politicalpreparedness.models.ElectionResponse
 import com.example.android.politicalpreparedness.network.jsonadapter.DateAdapter
 import com.example.android.politicalpreparedness.network.jsonadapter.ElectionAdapter
 import com.example.android.politicalpreparedness.models.RepresentativeResponse
+import com.example.android.politicalpreparedness.models.VoterInfoResponse
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -33,11 +35,13 @@ private val retrofit = Retrofit.Builder()
  */
 
 interface CivicsApiService {
-    //TODO: Add elections API Call
 
-    //TODO: Add voterinfo API Call
+    @GET("elections")
+    fun getElectionListAsync(): Deferred<ElectionResponse>
 
-    //TODO: Add representatives API Call
+    @GET("voterinfo")
+    fun getVoterInfoAsync(@Query("address") address: String, @Query("electionId") electionId: Int): Deferred<VoterInfoResponse>
+
     @GET("representatives")
     fun getRepresentativesAsync(@Query("address") address: String): Deferred<RepresentativeResponse>
 }
