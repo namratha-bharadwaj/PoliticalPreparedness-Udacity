@@ -3,4 +3,219 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:moveWhenScrollAtTop="true"
+            app:touchAnchorSide="top"
+            motion:touchAnchorId="@id/my_representatives_title_textView" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="5"
+                app:motionTarget="@id/use_location_button"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="30"
+                app:motionTarget="@id/search_button"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="60"
+                app:motionTarget="@id/zipcode_editText"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="70"
+                app:motionTarget="@id/city_editText"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="70"
+                app:motionTarget="@id/state_spinner"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="80"
+                app:motionTarget="@id/address_line_2_editText"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="90"
+                app:motionTarget="@id/address_line_1_editText"
+                app:transitionEasing="accelerate" />
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="100"
+                app:motionTarget="@id/title_textView"
+                app:transitionEasing="accelerate" />
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/address_line_1_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_textView" />
+
+        <Constraint
+            android:id="@id/address_line_2_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_line_1_editText" />
+
+        <Constraint
+            android:id="@id/city_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toStartOf="@id/state_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_line_2_editText" />
+
+        <Constraint
+            android:id="@id/state_spinner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="1.0"
+            app:layout_constraintBottom_toBottomOf="@id/city_editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/city_editText"
+            app:layout_constraintTop_toTopOf="@id/city_editText" />
+
+        <Constraint
+            android:id="@id/zipcode_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toEndOf="@id/city_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/city_editText" />
+
+        <Constraint
+            android:id="@id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:alpha="1.0"
+            app:layout_constraintTop_toBottomOf="@id/zipcode_editText" />
+
+        <Constraint
+            android:id="@id/use_location_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:alpha="1.0"
+            app:layout_constraintTop_toBottomOf="@id/search_button" />
+
+        <Constraint
+            android:id="@id/my_representatives_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/use_location_button" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/address_line_1_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_textView" />
+
+        <Constraint
+            android:id="@id/address_line_2_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_line_1_editText" />
+
+        <Constraint
+            android:id="@id/city_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintEnd_toStartOf="@id/state_spinner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_line_2_editText" />
+
+        <Constraint
+            android:id="@id/state_spinner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.0"
+            app:layout_constraintBottom_toBottomOf="@id/city_editText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/city_editText"
+            app:layout_constraintTop_toTopOf="@id/city_editText" />
+
+        <Constraint
+            android:id="@id/zipcode_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintEnd_toEndOf="@id/city_editText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/city_editText" />
+
+        <Constraint
+            android:id="@id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintTop_toBottomOf="@id/zipcode_editText" />
+
+        <Constraint
+            android:id="@id/use_location_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            android:alpha="0.0"
+            app:layout_constraintTop_toBottomOf="@id/search_button" />
+
+        <Constraint
+            android:id="@id/my_representatives_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
 </MotionScene>

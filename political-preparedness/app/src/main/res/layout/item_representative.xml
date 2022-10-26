@@ -28,8 +28,7 @@
 
         <TextView
             android:id="@+id/representative_role_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/UiParagraph"
             android:layout_marginStart="@dimen/margin_medium"
             android:layout_marginEnd="@dimen/margin_medium"
             android:text="@{representativeItem.office.name}"
@@ -41,8 +40,7 @@
 
         <TextView
             android:id="@+id/representative_name_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/UiParagraph"
             android:layout_marginTop="@dimen/margin_xsmall"
             android:gravity="left"
             android:text="@{representativeItem.official.name}"
@@ -53,8 +51,7 @@
 
         <TextView
             android:id="@+id/representative_party_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/UiParagraph"
             android:layout_marginTop="@dimen/margin_xsmall"
             android:text="@{representativeItem.official.party}"
             app:layout_constraintBottom_toBottomOf="@id/representative_photo_imageView"

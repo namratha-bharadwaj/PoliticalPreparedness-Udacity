@@ -3,8 +3,8 @@
     <dimen name="default_padding">8dp</dimen>
 
     <!-- text size -->
-    <dimen name="text_small">8sp</dimen>
-    <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
     <dimen name="text_large">24sp</dimen>
     <dimen name="text_xlarge">32sp</dimen>
 
@@ -20,4 +20,7 @@
     <dimen name="margin_medium">12dp</dimen>
     <dimen name="margin_large">18dp</dimen>
     <dimen name="margin_xlarge">24dp</dimen>
+    <dimen name="margin_xxlarge">72dp</dimen>
+
+    <dimen name="empty">0dp</dimen>
 </resources>

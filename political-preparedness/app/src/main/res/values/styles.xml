@@ -9,21 +9,42 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!-- TODO: Add necessary styles -->
-    <style name="HeadingText">
+    <style name="UiHeading1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_large</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-    <style name="ParagraphText">
+    <style name="UiBody">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="UiParagraph">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
-    <style name="PrimaryButtonStyle">
-        <item name="android:backgroundTint">@color/colorPrimary</item>
+    <style name="UiButtonPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <style name="UiEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:inputType">textPostalAddress</item>
     </style>
 
     <style name="SocialMediaIcon">
@@ -34,15 +55,6 @@
     <style name="RepresentativeState">
         <item name="android:inputType">textPostalAddress</item>
         <item name="android:entries">@array/states</item>
-    </style>
-
-    <style name="ElectionsTitle">
-        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
-    </style>
-
-    <style name="ElectionName">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>
